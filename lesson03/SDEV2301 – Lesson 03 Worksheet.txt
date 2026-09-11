@@ -1,0 +1,178 @@
+Section 1 — bool in C# (Slides 2–3)
+    1. Compile or Not?
+
+    For each condition, indicate whether it compiles in C# and explain why.
+
+    Code	Compiles? (Yes/No)	Why
+    if (x > 0)	Yes	- If x is initialized as an int it will complie (but not for any other types, not even double)
+    if (x)	Yes	- If x is initialized as a bool it will complie
+    if (x == 1)	Yes	- If x is initialized as an int it will complie
+    2.Key Rule (Short Answer)
+
+    In one sentence, explain the key difference between C# and Python/JavaScript when it comes to conditions.
+        C# is strict on typing. JavaScript only compares types when you use ===, even then, it would still compile, you might just get an unexpected result. 
+
+Section 2 — if / else in C# (Slides 4–5)
+    3.Prediction Check
+
+    Consider the following code:
+        int x = 5;
+
+        if (x)
+        {
+            Console.WriteLine("A");
+        }
+        else
+        {
+            Console.WriteLine("B");
+        }
+
+    Will this compile in C#?   No
+    If not, rewrite the if condition so that it does compile:
+    if ( x == 5 )
+    After fixing it, what prints when x = 5?
+    Output: A
+
+Section 3 — Nested Decisions (Slide 6)
+    4.Trace the Output
+
+    Given the following values:
+        bool isAuthenticated = true;
+        bool hasPermission = false;
+
+    What will be printed?
+
+        if (isAuthenticated)
+        {
+            if (hasPermission)
+            {
+                Console.WriteLine("Access granted");
+            }
+            else
+            {
+                Console.WriteLine("Insufficient permissions");
+            }
+        }
+        else
+        {
+            Console.WriteLine("User not authenticated");
+        }
+
+    Output:
+        Insufficient permissions
+
+
+Section 4 — switch in C# (Slide 7)
+    True or False
+
+    5.Mark each statement as True or False.
+
+    Statement                                   	True	False
+    C# allows accidental fall-through by default	          F
+    case labels must be constants                    T
+    C# switch behaves exactly like Python Match               F
+
+
+Section 5 — Loops: What’s Different in C# (Slides 8–11)
+    6.Loop Selection
+    Choose the most appropriate loop (while, for, or do-while) for each situation.
+
+    Scenario	                                                Loop
+    Number of iterations is known ahead of time	                for
+    User input must run at least once	                        do-while
+    Loop ends based on user-entered sentinel value	            while
+
+    7.Off-By-One Check
+    What does the following code print?
+
+    for (int i = 0; i <= 5; i++)
+    {
+        Console.WriteLine(i);
+    }
+    Output (write all numbers):
+        0
+        1
+        2
+        3
+        4
+        5
+
+Section 6 — do-while Loops (Slide 11)
+    8.Concept Check
+
+    Why is a do-while loop useful for input validation?
+        Because you need to get user inputer before you can check it, a do while loop will run at least once which allows us to easily get user input
+
+Section 7 — Logical Operators (Slide 12)
+    9.Valid or Invalid?
+
+    For each expression, indicate whether it is valid in C#.
+
+    Expression	Valid? (Yes/No)
+        if (age && hasConsent)	        No
+        if (age > 18 && hasConsent)	    Yes
+        if (!isLoggedIn)	            Yes
+
+Section 8 — Ternary Operator (Slide 13)
+    10.Rewrite Using Ternary
+
+    Rewrite the following if / else using the conditional (ternary) operator.
+
+    int max;
+    if (a > b)
+    {
+        max = a;
+    }
+    else
+    {
+        max = b;
+    }
+    int max = a > b ? "a" : "b";
+
+Section 9 — Increment / Decrement (Slide 15)
+    11.Predict the Output
+
+    int x = 4;
+    Console.WriteLine(x++);
+    Console.WriteLine(++x);
+    Output:
+    Line 1: 4
+    Line 2: 6
+
+Section 10 — While Loop Exercise (Slides 16–18)
+    12.Program Design (No Coding Yet)
+
+    You are asked to write Analysis1:
+
+    Loop exactly 10 times
+    Ask for pass (1) or fail (2)
+    Count passes and failures
+    Which loop is most appropriate?   X for   ☐ while   ☐ do-while
+    What variable controls the loop?
+        usually i or x, whatever counter you want
+    What two variables must be tracked?
+        pass and fail (or # of occurrances of 1 and 2)
+
+Section 11 — Sentinel Values (Slide 18)
+    13. Sentinel Concept
+
+    In SentinelValues.cs, what value causes the loop to stop?
+        data (when data = 0, as controlled by user input)
+
+    Why must a sentinel value not be a valid data value?
+
+
+Section 12 — break and continue (Slide 19)
+    14.Concept Check
+
+    Match the keyword to its behavior:
+
+    Keyword	Behavior
+    break	    exits a loop
+    continue	skip to net iteration of loop
+    
+Exit Reflection (Slide 20)
+    15.Reflection Question
+
+    What is one rule enforced by C# that helps prevent logic errors compared to Python or JavaScript?
+    very strict variable typing 
