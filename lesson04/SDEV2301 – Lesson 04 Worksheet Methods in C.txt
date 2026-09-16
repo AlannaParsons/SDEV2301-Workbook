@@ -1,0 +1,80 @@
+Section 1 — Understanding Method Signatures (Slides 5–6)
+    Identify the parts of this method signature:
+
+    static double CalculateTax(double amount)
+    Part	Meaning
+    static	        modifier
+    double	        return type
+    CalculateTax	method name
+    double amount	parameters
+
+Section 2 — Void vs Return (Slides 7–8)
+    Which version is better for reuse? Why? (1–2 sentences)
+
+    static void Add(int a, int b)
+    {
+        Console.WriteLine(a + b);
+    }
+    static int Add(int a, int b)
+    {
+        return a + b;
+    }
+    Answer:
+        Void methods are not as good because they return nothing
+
+Section 3 — Calling Methods (Slides 9–10)
+    What is printed?
+
+    static int Double(int x)
+    {
+        return x * 2;
+    }
+
+    Console.WriteLine(Double(5));
+    Output: 10
+
+Section 4 — Pass-By-Value (Slides 12)
+    Predict the output:
+
+    static void Change(int num)
+    {
+        num = 100;
+    }
+
+    int value = 20;
+    Change(value);
+    Console.WriteLine(value);
+    Output: 20
+        
+    Explain why:
+        Because local variables only exist inside the method and are destroyed when the method finishes
+
+Section 5 — Write Your Own Method (Slides 14–15)
+    Write a method that:
+
+    Accepts two int values
+    Returns the larger value
+    static int Larger(int a, int b)
+    {
+        return a > b ? a : b;
+    }
+
+Section 6 — Method Overloading (Slides 16–17)
+    Write an overloaded version of your method from #5 that accepts double values.
+
+    static double Larger(double a, double b)
+    {
+        return a > b ? a : b;
+    }
+
+Section 7 — Cup Converter (Slides 19–21)
+    Match the method to its responsibility:
+
+    Method	Responsibility
+    GetCups	- This method will prompt the user to enter the number of cups, and then return that value as a double
+    CupsToOunces - This method will accept the number of cups as an argument and then returns the equivalent number of fluid ounces as a double
+    DisplayResults - This method displays a message indicating the results of the conversion
+
+Exit Reflection (Slide 24)
+    What is one rule about methods in C# that is different from Python or JavaScript?
+        Overloading is a completely new concept, using the same function name would not be allowed in other languages
