@@ -10,7 +10,7 @@ class Program
     {
         double cups = 0;
         Console.WriteLine($"Enter the number of cups: ");
-        while (!double.TryParse(Console.ReadLine(), out cups))
+        while (!double.TryParse(Console.ReadLine(), out cups) || cups < 0)
         {
             Console.WriteLine("Invalid input, try again");
             Console.WriteLine($"Enter the number of cups: ");
