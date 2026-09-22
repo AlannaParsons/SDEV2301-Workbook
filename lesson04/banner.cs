@@ -10,7 +10,7 @@ class Program
     static void DisplayBanner()
     {
         Console.WriteLine("**********************************");
-        Console.WriteLine(" Lesson 4 - C # Methods");
+        Console.WriteLine("***** Lesson 4 - C # Methods *****");
         Console.WriteLine("**********************************");
     }
 }
